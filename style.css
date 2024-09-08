@@ -3,9 +3,10 @@
 :root {
     --color-primary: #6366F1;
     --color-white: #fff;
-    --color-dark: #0B0F19;
+    --color-grey900: #0B0F19;
     --color-grey600: #9397AD;
     --color-grey300: #E2E5F1;
+    --color-grey700: #565973;
     --container-padding: 1rem;
 }
 
@@ -65,7 +66,7 @@ a:hover {
 }
 
 .nav-link {
-    color: var(--color-dark);
+    color: var(--color-grey900);
     font-weight: 600;
     text-decoration: none;
 }
@@ -82,6 +83,57 @@ header .container {
     align-items: center;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+}
+#firstpage {
+    text-align: center;
+
+    p {
+        font-size: 18px;
+        color: var(--color-grey700);
+    }
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.storelink {
+    background-color: var(--color-grey900);
+    width: 366px;
+    height: 50px;
+    border-radius: 8px;
+    margin-top: 2em;
+}
+
+.storelink:hover {
+    cursor: pointer;
+}
+
+.discovermore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    gap: 2rem;
+
+    p {
+        font-size: 14px;
+        color: var(--color-grey700);
+    }
+}
+
+#discovermore {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    /* background-color: var(--color-white); kommenterat bort tills bakgrundsfärgen är rätt*/
+
+}
+
+#discovermore:hover {
+    cursor: pointer;
 }
 
 footer {
@@ -175,5 +227,14 @@ footer {
     .brand-box {
         height: 100px;
         width: 200px;
+    }
+}
+
+/* mörkt tema */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--color-grey900);
+        color: var(--color-white);
+        /* kom ihåg att byta de svarta play/app-knapparna till mörka temat */
     }
 }
