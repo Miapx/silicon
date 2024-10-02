@@ -95,6 +95,20 @@ header .container {
     }
 }
 
+@media (max-width: 576px) {
+    header .container {
+        gap: 2rem;
+    }
+
+    .hamburger {
+        padding-right: 1rem;
+    }
+
+    .label {
+        display: none;
+    }
+}
+
 a {
     color: var(--color-primary);
     text-decoration: none;
@@ -306,7 +320,47 @@ gap: 1rem;
             margin-bottom: 2rem;
             margin-top: 2rem;
         }
-    }  
+    }
+    
+    @media (max-width: 576px) {
+        .container {
+            max-width: 540px;
+            display: flex;
+        }
+
+        .content {
+            width: 100%;            
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .images {
+            display: none;
+        }
+
+        .content h1 {
+            position: relative;
+            width: auto;
+            left: auto;
+            margin-top: 0;
+        }
+
+        p {
+            margin: 0;
+            padding: 0 3rem;
+            text-align: center;
+        }
+
+        .buttons {
+            flex-direction: column;
+            width: 80%;
+        }
+    }
 }
 
 .buttons {
@@ -330,6 +384,7 @@ gap: 1rem;
 .images { 
     grid-area: images;
     position: relative;
+    overflow: hidden;
 
     .img-back {
         position: absolute;
@@ -376,6 +431,12 @@ gap: 1rem;
     }
     #brand-6 {
         display: none;
+    }
+
+    @media (max-width: 576px) {
+        #brands {
+            display: none;
+        }
     }
 }
 
@@ -450,6 +511,22 @@ gap: 1rem;
     }
 }
 
+@media (max-width: 576px) {
+    #pagetwo .container {
+        padding: 2rem 4rem;
+    }
+    .features-text {
+        max-width: 540px;
+    }
+
+    .featuresection {
+        max-width: ;
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
 #pagethree {
     background-color: var(--color-grey100);
     display: grid;
@@ -502,9 +579,6 @@ gap: 1rem;
     #pagethree .container {
         max-width: 720px;
     }
-    #phone-1, #phone-3 {
-        /* display: none; */
-    }
 
     .carousel {
         width: 600px;
@@ -533,6 +607,32 @@ gap: 1rem;
         position: absolute;
         width: 200px;
         right: -60px;
+    }
+
+    @media (max-width: 576px) {
+        .carousel {
+          gap: 0;
+          margin-left: 0;
+          padding-left: 0;
+        }
+        #phone-1 {
+            display: none;
+        }
+        #phone-4 {
+            display: none;
+        }
+        #phone-2 {
+            position: relative;
+            left: 0;
+            right: 0;
+        }
+        .undercarousel {
+            max-width: 540px;
+            padding: 2rem;
+        }
+        #pagethree h1 {
+            padding: 2rem 0;
+        }
     }
 
 
@@ -694,7 +794,7 @@ gap: 1rem;
     .container { 
     display: flex;
     justify-content: space-between;
-    padding: 3rem 0;
+    padding: 3rem 1rem;
     h2 {
         font-size: 2rem;
         font-weight: 800;
@@ -763,6 +863,10 @@ gap: 1rem;
         background-color: var(--color-primary);
 
     }
+}
+
+.FAQright .FAQstablet {
+    display: none;
 }
 
 .accordion-link {
@@ -837,7 +941,13 @@ gap: 1rem;
         display: none;
     }
 
-    .contactustablet {
+    .accordion .FAQstablet {
+        display: block;
+        text-align: center;
+        padding: 0 2rem 1rem 2rem;
+    }
+
+    #FAQ .contactustablet {
         display: flex;
         justify-content: center;
         gap: 2rem;
@@ -848,7 +958,7 @@ gap: 1rem;
         width: 100%;
     }
 
-    .contactcall {
+    .contact {
         width: 100%;
     }
 }
@@ -881,6 +991,12 @@ gap: 1rem;
         font-size: 1rem;
         font-weight: 500;
         cursor: pointer;
+    }
+}
+
+.notifbell {
+    h2 {
+        display: none;
     }
 }
 
@@ -951,6 +1067,33 @@ position: relative;
     }
 }
 
+@media (max-width: 576px) {
+
+.subscribetablet {
+    display: none;
+}
+
+    #subscribe .container {
+        display: grid;
+    }
+
+    .notifbell {
+        display: flex;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+
+        h2 {
+            display: block;
+            width: 70%;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .form-input {
+        width: auto;
+    }
+}
+
 
 footer {
     font-size: .87rem;
@@ -963,5 +1106,11 @@ footer {
         gap: .5rem;
         justify-content: center;
         align-items: center;
+    }
+
+    @media (max-width: 576px) {
+        .container {
+            flex-direction: column;
+        }
     }
 }
