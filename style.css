@@ -268,74 +268,75 @@ gap: 1rem;
     .container {
         display: grid;
         grid-template-columns: 2fr 3fr;
-        grid-template-areas:    "content images"
+        grid-template-areas:    "heroheadline images"
+                                "content images"
                                 "content images";
                                 
         gap: 2rem;
     }
 
-    .content {
-    grid-area: content;
-
-        h1 {
+    .heroheadline {
+        grid-area: heroheadline;
+            h1 {
             font-size: 3.5rem;
             font-weight: 800;
-
-            margin-top: 2rem;
+            margin-bottom: 0;
         }
+    }
 
-        p {
-            margin-bottom: 2rem;
-        }
+    .content {
+    grid-area: content;
     }
 
     @media (max-width: 768px) {
         .container {
             max-width: 720px;
-            height: 100svh;
+            height: 70svh;
+            width: 100%;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "heroheadline heroheadline"
+                                    "content images";
         }
 
-        .content h1 {
-            position: absolute;
-            font-size: 2.75rem;
-            text-align: center;
-            max-width: 400px;
-            left: 180px;
+        .heroheadline {
+            h1 {
+                font-size: 2.7rem;
+                text-align: center;
+                margin: 0;
+            }
         }
-
-        p {
-            margin-top: 220px;
-        }
-        
-
+       
         .images {
             position: relative;
-            width: 30vw;
+            height: 80svh;
+            width: 100%;
         }
 
         .img-back {
-            height: 100%;
+            height: 100svh;
             width: 100%;
-            bottom: -30%;
+            bottom: -10%;
         }
 
         .img-front {
-            height: 100%;
+            height: 100svh;
             width: 100%;
-            bottom: -30%;
+            bottom: 0;
         }
 
         .discover-more {
             padding-top: 0;
-            margin-bottom: 2rem;
-            margin-top: 2rem;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
         }
     }
     
     @media (max-width: 576px) {
         .container {
             max-width: 540px;
+            height: auto;
             display: flex;
+            flex-direction: column;
         }
 
         .content {
@@ -370,12 +371,18 @@ gap: 1rem;
             flex-direction: column;
             width: 80%;
         }
+
+        .discover-more {
+            padding-top: 1rem;
+            margin-top: 0;
+        }
     }
 }
 
 .buttons {
     display: flex;
     gap: 1rem;
+    padding-top: 2rem;
 }
 
 .discover-more {
@@ -383,8 +390,8 @@ gap: 1rem;
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding-top: 9rem;
-    margin-bottom: 2rem;
+    padding-top: 7rem;
+    padding-bottom: 2rem;
 }
 
 .content a {
@@ -396,7 +403,6 @@ gap: 1rem;
     position: relative;
     height: 100vh;
     width: 100%;
-    margin-top: 0;
 
     .img-back {
         position: absolute;
@@ -406,7 +412,7 @@ gap: 1rem;
 
 
         z-index: -10;
-        bottom: -30%;
+        bottom: -10%;
         right: 5%;
     }
 
@@ -419,7 +425,7 @@ gap: 1rem;
 
 
         z-index: -5;
-        bottom: -15%;
+        bottom: 0%;
         left: 25%;
     }
 }
@@ -542,14 +548,7 @@ gap: 1rem;
         display: flex;
         flex-direction: column;
     }
-
 }
-
-
-
-
-
-
 
 #pagethree {
     background-color: var(--color-grey100);
@@ -676,8 +675,6 @@ gap: 1rem;
         }
     }
 
-
-
     .undercarousel {
         padding-top: 3rem;
     }
@@ -795,6 +792,7 @@ gap: 1rem;
         gap: 4rem;
     }
 }
+
 .headtext {
     font-size: 2.18rem;
     font-weight: 800;
@@ -867,7 +865,6 @@ gap: 1rem;
     padding-top: 2rem;
     gap: 2rem;
 
-
     a {
         font-size: .87rem;
         font-weight: 600;
@@ -885,7 +882,6 @@ gap: 1rem;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 1rem;
     border-radius: .5rem;  
-
 
     a {
         display: flex;
@@ -911,7 +907,7 @@ gap: 1rem;
     border: none;
     cursor: pointer;
     background-color: var(--color-grey100);
-}
+    }
     
     .btn-circle:hover {
         background-color: var(--color-primary);
@@ -1039,7 +1035,6 @@ gap: 1rem;
         gap: 5rem;
         padding: 5rem;
         margin: auto;
-
     }
 
      h2 {
@@ -1090,9 +1085,7 @@ position: relative;
     position: absolute;
     top: 50%;
     left: 4rem;
-
     transform: translateY(-50%);
-
 }
 
 #email {
@@ -1111,7 +1104,6 @@ position: relative;
 
     #subscribe {
         margin: 0 1rem;
-
         .container {
             gap: 1rem;
             padding: 2rem;
@@ -1132,9 +1124,9 @@ position: relative;
 
 @media (max-width: 576px) {
 
-.subscribetablet {
-    display: none;
-}
+    .subscribetablet {
+        display: none;
+    }
 
     #subscribe .container {
         display: grid;
