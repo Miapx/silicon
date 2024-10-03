@@ -54,6 +54,7 @@ body {
 .grad {
     background: rgb(99,102,241);
     background: linear-gradient(0deg, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 42%, rgba(241,244,253,0.1) 83%);
+    width: 100vw;
 }
 
 .container {
@@ -270,7 +271,7 @@ gap: 1rem;
         grid-template-areas:    "content images"
                                 "content images";
                                 
-        gap: 1rem;
+        gap: 2rem;
     }
 
     .content {
@@ -279,6 +280,8 @@ gap: 1rem;
         h1 {
             font-size: 3.5rem;
             font-weight: 800;
+
+            margin-top: 2rem;
         }
 
         p {
@@ -287,6 +290,10 @@ gap: 1rem;
     }
 
     @media (max-width: 768px) {
+        .container {
+            max-width: 720px;
+            height: 100svh;
+        }
 
         .content h1 {
             position: absolute;
@@ -303,19 +310,19 @@ gap: 1rem;
 
         .images {
             position: relative;
-            width: 300px;
-            top: 1rem;
+            width: 30vw;
         }
 
         .img-back {
-            height: 70%;
-            width: 70%;
-            right: 50px;
+            height: 100%;
+            width: 100%;
+            bottom: -30%;
         }
 
         .img-front {
-            height: 80%;
-            width: 70%;
+            height: 100%;
+            width: 100%;
+            bottom: -30%;
         }
 
         .discover-more {
@@ -376,8 +383,8 @@ gap: 1rem;
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-top: 10rem;
-    margin-bottom: 4rem;
+    padding-top: 9rem;
+    margin-bottom: 2rem;
 }
 
 .content a {
@@ -387,30 +394,35 @@ gap: 1rem;
 .images { 
     grid-area: images;
     position: relative;
-    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    margin-top: 0;
 
     .img-back {
         position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+
+
         z-index: -10;
-        bottom: -40px;
-        right: 230px;
+        bottom: -30%;
+        right: 5%;
     }
 
     .img-front {
         position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+
+
+
         z-index: -5;
-        bottom: -60px;
-        right: 0;
+        bottom: -15%;
+        left: 25%;
     }
 }
-
-
-
-
-
-
-
-
 
 #brands {
     padding-top: 4rem;
@@ -486,7 +498,6 @@ gap: 1rem;
 }
 
 .icon {
-    /* background-color: hsl(240, 48%, 95%); */
     background-color: #6365f108;
     padding: 1em;
     border-radius: 8px;
@@ -523,32 +534,41 @@ gap: 1rem;
 
 @media (max-width: 576px) {
     #pagetwo .container {
-        padding: 2rem 4rem;
-    }
-    .features-text {
         max-width: 540px;
+        padding: 2rem 4rem;
     }
 
     .featuresection {
-        max-width: ;
         display: flex;
         flex-direction: column;
     }
 
 }
 
+
+
+
+
+
+
 #pagethree {
     background-color: var(--color-grey100);
+    color: var(--color-grey900);
     display: grid;
-    grid-template-areas: "heading"
+    grid-template-areas:    "heading"
                             "carousel"
                             "undercarousel";
-    color: var(--color-grey900);
+    margin-left: auto;
+    margin-right: auto;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
 
     h1 {
         grid-template-areas: "heading";
         text-align: center;
         padding: 3rem;
+        margin: 0;
         font-size: 2.5rem;
         font-weight: 800;
         color: var(--color-grey900);
@@ -558,7 +578,6 @@ gap: 1rem;
         font-size: 1.5rem;
         font-weight: 800;
         color: var(--color-grey900);
-        margin-bottom: 1rem;
     }
 
     p {
@@ -569,9 +588,31 @@ gap: 1rem;
 .carousel {
     grid-area: "carousel";
     display: flex;
+    margin-left: auto;
+    margin-right: auto;
     justify-content: center;
     align-items: center;
-    gap: 5rem;
+    gap: 3rem;
+    height: 90vh;
+    width: 100%;
+}
+
+#phone-1 {
+    object-fit: contain;
+    height: 100%;
+    width: 30%;
+}
+
+#phone-2 {
+    object-fit: contain;
+    height: 100%;
+    width: 30%;
+}
+
+#phone-3 {
+    object-fit: contain;
+    height: 100%;
+    width: 30%;
 }
 
 #phone-4 {
@@ -591,21 +632,17 @@ gap: 1rem;
     }
 
     .carousel {
-        width: 600px;
-        height: 350px;
-        position: relative;
+        height: 50svh;
+        width: 90%;
+        gap: 0;
     }
 
     #phone-1 {
-        position: absolute;
-        width: 200px;
-        left: 20px;
+        object-fit: contain;
     }
 
     #phone-2 {
-        position: absolute;
-        width: 200px;
-        left: 240px;
+        object-fit: contain;
     }
 
     #phone-3 {
@@ -614,17 +651,12 @@ gap: 1rem;
 
     #phone-4 {
         display: block;
-        position: absolute;
-        width: 200px;
-        right: -60px;
+        object-fit: contain;
+        height: 100%;
+        width: 30%;
     }
 
     @media (max-width: 576px) {
-        .carousel {
-          gap: 0;
-          margin-left: 0;
-          padding-left: 0;
-        }
         #phone-1 {
             display: none;
         }
@@ -632,12 +664,11 @@ gap: 1rem;
             display: none;
         }
         #phone-2 {
-            position: relative;
-            left: 0;
-            right: 0;
+            padding-top: 2rem;
+            height: 70svh;
+            width: 40%;
         }
         .undercarousel {
-            max-width: 540px;
             padding: 2rem;
         }
         #pagethree h1 {
@@ -652,21 +683,21 @@ gap: 1rem;
     }
 }
 
-
 #pagefour {
     .container { 
+        max-width: 1320px;
     display: grid;
     grid-template-areas:    "moneytransfer imagestransfer"
                             "imagespayment moneypaymenttext";
-    padding: 5rem 8rem;
-    gap: 5rem;
+    padding: 4rem 4rem;
+    gap: 3rem;
     margin-bottom: 3rem;
     align-items: center;
     justify-content: center;
     }
 
     h2 {
-        font-size: 32px;
+        font-size: 2rem;
         font-weight: 800;
     }
 
@@ -675,7 +706,7 @@ gap: 1rem;
    }
    
     a {
-        width: 40%;
+        width: 50%;
         margin-top: 2rem;
     }
 
@@ -702,7 +733,6 @@ gap: 1rem;
     }
 }
 
-
 .checkmark {
     margin-right: 0.5rem;
 }
@@ -712,11 +742,28 @@ gap: 1rem;
 }
 
 .imagestransfer {
-    grid-area: "imagestransfer";        
+    grid-area: "imagestransfer"; 
+    height: 80vh;
+    width: 100%;
+      
+}
+
+.imgtransfer {
+    height: 100%;
+    width: 100%;
+    object-fit: contain; 
 }
 
 .imagespayment {
     grid-area: "imagespayment";
+    height: 60vh;
+    width: 100%;
+}
+
+.imgpayment {
+    height: 110%;
+    width: 100%;
+    object-fit: contain; 
 }
 
 .moneypaymenttext {
@@ -740,6 +787,7 @@ gap: 1rem;
 #pagefive {
     background-color: var(--color-grey100);
     padding: 5rem 0;
+    width: 100vw;
 
     .container {
         display: grid;
@@ -980,6 +1028,8 @@ gap: 1rem;
 #subscribe {
     background-color: var(--color-grey100);
     border-radius: .5rem;
+    width: 100vw;
+    height: auto;
 
     .container { 
         max-width: 1300px;
@@ -1112,6 +1162,7 @@ footer {
     padding-top: 2rem;
     padding-bottom: 2rem;
     color: var(--color-grey600);
+    width: 100vw;
 
     .container {
         display: flex;
